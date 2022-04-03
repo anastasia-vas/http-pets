@@ -8,6 +8,10 @@
 <style lang="scss">
 #app {
   font-family: "Roboto", sans-serif;
+  background-color: #1f1b1b;
+  min-width: 100%;
+  height: 100%;
+  color: #fff;
 }
 </style>
 
