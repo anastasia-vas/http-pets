@@ -7,12 +7,16 @@
 
 <style lang="scss">
 #app {
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: #1f1b1b;
   min-width: 100%;
   height: 100%;
   color: #fff;
 }
+</style>
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap");
 </style>
 
 <!-- clearing default styles -->
