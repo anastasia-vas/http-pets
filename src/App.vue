@@ -10,7 +10,7 @@
   font-family: "Inter", sans-serif;
   background-color: #1f1b1b;
   min-width: 100%;
-  height: 100%;
+  min-height: 100%;
   color: #fff;
 }
 </style>

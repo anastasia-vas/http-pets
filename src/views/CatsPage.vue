@@ -32,7 +32,7 @@
       <div class="get-image">
         <p>Enter a status code</p>
         <label>
-          <input type="text" name="" maxlength="3" pattern="^[0-9]" autofocus />
+          <input type="text" maxlength="3" pattern="^[0-9]" autofocus />
           <button type="submit"></button>
         </label>
       </div>
