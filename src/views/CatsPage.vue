@@ -22,40 +22,58 @@
         </p>
       </div>
       <div class="image">
-        <div class="empty">
+        <div class="empty" v-if="imgLink == ''">
           <div class="text">Enter a status code and get a cat</div>
         </div>
-        <img src="#" alt="" />
+        <img :src="imgLink" v-else alt="" />
       </div>
     </div>
     <div class="right-block">
       <div class="get-image">
         <p>Enter a status code</p>
         <label>
-          <input type="text" maxlength="3" pattern="^[0-9]" autofocus />
-          <button type="submit"></button>
+          <input
+            type="text"
+            maxlength="3"
+            pattern="^[0-9]"
+            v-model="statusCode"
+            autofocus
+          />
+          <button type="submit" @click="getImg()"></button>
         </label>
       </div>
-      <div class="error"></div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      statusCode: "",
+      imgLink: "",
+    };
+  },
+  methods: {
+    getImg() {
+      this.imgLink = `https://http.cat/${this.statusCode}.jpg`;
+    },
+  },
+};
 </script>
 
 <style lang="scss">
 .cats {
   padding: 2% 10%;
   display: flex;
+  width: 100%;
   align-items: center;
   .left-block {
     display: flex;
     flex-direction: column;
-    margin: 0 10% 0 0;
+    margin: 0 5% 0 0;
     .note {
-      margin: 0 0 6% 0;
+      margin: 0 0 4% 0;
       h2 {
         font-size: 25px;
         line-height: 1;

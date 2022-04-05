@@ -7,6 +7,7 @@
 
 <style lang="scss">
 #app {
+  display: flex;
   font-family: "Inter", sans-serif;
   background-color: #1f1b1b;
   min-width: 100%;
