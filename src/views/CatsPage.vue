@@ -1,5 +1,10 @@
 <template>
   <div class="cats">
+    <div class="to-main-page">
+      <router-link to="/"
+        ><img src="../assets/back-arrow.svg" alt=""
+      /></router-link>
+    </div>
     <div class="left-block">
       <div class="note">
         <h2>Note</h2>
@@ -37,6 +42,7 @@
             maxlength="3"
             pattern="^[0-9]"
             v-model="statusCode"
+            @keyup.enter="getImg()"
             autofocus
           />
           <button type="submit" @click="getImg()"></button>
@@ -57,6 +63,7 @@ export default {
   methods: {
     getImg() {
       this.imgLink = `https://http.cat/${this.statusCode}.jpg`;
+      this.statusCode = "";
     },
   },
 };
@@ -68,10 +75,22 @@ export default {
   display: flex;
   width: 100%;
   align-items: center;
+  position: relative;
+  .to-main-page {
+    position: absolute;
+    top: 15px;
+    left: 3%;
+    a {
+      img {
+        width: 12%;
+      }
+    }
+  }
   .left-block {
     display: flex;
     flex-direction: column;
-    margin: 0 5% 0 0;
+    margin: 0 2% 0 0;
+    width: 60%;
     .note {
       margin: 0 0 4% 0;
       h2 {
@@ -92,7 +111,7 @@ export default {
         display: flex;
         justify-content: center;
         align-content: center;
-        width: 500px;
+        width: 80%;
         height: 500px;
         border: 3px solid #c4c4c4;
         .text {
@@ -102,6 +121,9 @@ export default {
           display: flex;
           align-self: center;
         }
+      }
+      img {
+        width: 80%;
       }
     }
   }
